@@ -1,0 +1,9 @@
+-
+  name: Send web package
+  hosts: target1
+  tasks:
+    - name: Send nginx
+      copy: src="/home/egoryan/project/nginx.zip" dest="/tmp/"
+      tags: fetch
+    - name: Unpacking
+      unarchive: src="/tmp/nginx.zip" dest="/tmp/"
